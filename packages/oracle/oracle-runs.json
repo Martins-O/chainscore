@@ -1,0 +1,43 @@
+[
+  {
+    "timestamp": "2026-05-18T09:52:29.056Z",
+    "count": 0,
+    "runs": []
+  },
+  {
+    "timestamp": "2026-05-18T09:53:17.411Z",
+    "count": 0,
+    "runs": []
+  },
+  {
+    "timestamp": "2026-05-18T09:56:43.857Z",
+    "count": 0,
+    "runs": []
+  },
+  {
+    "timestamp": "2026-05-18T11:07:47.090Z",
+    "count": 0,
+    "runs": []
+  },
+  {
+    "timestamp": "2026-05-19T16:51:20.305Z",
+    "count": 0,
+    "runs": []
+  },
+  {
+    "timestamp": "2026-05-19T16:51:52.945Z",
+    "count": 1,
+    "runs": [
+      {
+        "agentId": 1,
+        "oldScore": 350,
+        "newScore": 350,
+        "changed": false,
+        "timestamp": "2026-05-19T16:51:52.945Z",
+        "flags": [
+          "WALLET_TOO_NEW"
+        ]
+      }
+    ]
+  }
+]
