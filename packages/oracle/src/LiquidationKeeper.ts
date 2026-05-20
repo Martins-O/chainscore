@@ -1,4 +1,9 @@
 import { ethers } from "ethers";
+import * as dotenv from "dotenv";
+import * as path from "path";
+
+dotenv.config({ path: path.resolve(process.cwd(), ".env") });
+dotenv.config({ path: path.resolve(process.cwd(), "../../.env") });
 
 const VAULT_ABI = [
   "function getHealthFactor(uint256 loanId) view returns (uint256)",

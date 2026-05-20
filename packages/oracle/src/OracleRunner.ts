@@ -3,6 +3,10 @@ import * as fs from "fs";
 import * as path from "path";
 import { compute } from "./ScoreComputer.js";
 import type { WalletHistory } from "./types.js";
+import * as dotenv from "dotenv";
+
+dotenv.config({ path: path.resolve(process.cwd(), ".env") });
+dotenv.config({ path: path.resolve(process.cwd(), "../../.env") });
 
 const AGENTID_ABI = [
   "function totalSupply() view returns (uint256)",

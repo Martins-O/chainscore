@@ -7,6 +7,7 @@ on:
 jobs:
   run-keeper:
     runs-on: ubuntu-latest
+    environment: rh-chain
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
