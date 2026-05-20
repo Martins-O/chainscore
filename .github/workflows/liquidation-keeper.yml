@@ -1,0 +1,22 @@
+name: Liquidation Keeper
+on:
+  schedule:
+    - cron: '*/5 * * * *'   # every 5 min
+  workflow_dispatch:
+
+jobs:
+  run-keeper:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install and build
+        run: cd packages/oracle && npm install && npm run build
+      - name: Run keeper once
+        run: cd packages/oracle && node dist/LiquidationKeeper.js --run-once
+        env:
+          ORACLE_PRIVATE_KEY: ${{ secrets.ORACLE_PRIVATE_KEY }}
+          RH_CHAIN_RPC_URL: ${{ secrets.RH_CHAIN_RPC_URL }}
+          LENDING_VAULT_ADDRESS: ${{ secrets.LENDING_VAULT_ADDRESS }}
