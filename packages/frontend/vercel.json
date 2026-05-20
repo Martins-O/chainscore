@@ -1,0 +1,8 @@
+{
+  "framework": "nextjs",
+  "buildCommand": "next build",
+  "installCommand": "npm install",
+  "regions": ["arn1", "cdg1", "dub1", "fra1", "hnd1", "iad1", "icn1", "kix1", "lhr1", "lhr2", "pdx1", "sfo1", "sin1", "syd1"],
+  "cleanUrls": true,
+  "trailingSlash": false
+}
