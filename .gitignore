@@ -6,3 +6,8 @@ cache/
 typechain-types/
 .next/
 *.tsbuildinfo
+AGENTS.md
+packages/indexer/node_modules
+packages/oracle/node_modules
+packages/sdk/node_modules
+packages/dashboard/node_modules

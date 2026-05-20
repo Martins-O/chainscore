@@ -1,0 +1,74 @@
+
+
+> @chainscore/contracts@0.0.1 test
+> hardhat test
+
+
+
+  AgentID
+    mintIdentity
+      ✔ creates token, sets createdAt, emits IdentityMinted (1590ms)
+      ✔ twice from same address reverts AlreadyHasIdentity
+    soulbound
+      ✔ transfer between two addresses reverts TransferNotAllowed
+    registerWallet
+      ✔ adds to linked list, emits WalletRegistered
+      ✔ called by non-owner reverts NotTokenOwner
+      ✔ 6th time reverts MaxWalletsReached (164ms)
+    revokeWallet
+      ✔ removes from list, emits WalletRevoked
+      ✔ unlinked address reverts WalletNotLinked
+    views
+      ✔ getLinkedWallets returns correct list after adds and removes (92ms)
+      ✔ tokenOfOwner returns correct tokenId (40ms)
+
+  LendingVault
+    deposit
+      ✔ transfers USDC in, mints correct shares, emits Deposited (252ms)
+    withdraw
+      ✔ burns shares, returns correct USDC, emits Withdrawn
+    borrow - authorization
+      ✔ without AgentID reverts NoAgentIdentity
+    borrow - collateral
+      ✔ with non-whitelisted collateral reverts CollateralNotWhitelisted
+    borrow - LTV limit
+      ✔ exceeding LTV reverts ExceedsMaxLTV
+    borrow - liquidity
+      ✔ exceeding vault liquidity reverts InsufficientLiquidity
+    borrow - success
+      ✔ locks collateral, transfers USDC, emits Borrowed, returns loanId (72ms)
+    repay - partial
+      ✔ reduces principal, does not return collateral yet (66ms)
+    repay - full
+      ✔ returns collateral, closes loan, emits Repaid (68ms)
+    liquidate
+      ✔ on healthy loan reverts LoanNotLiquidatable
+      ✔ on unhealthy loan seizes collateral, closes loan, emits Liquidated (44ms)
+    interest accrual
+      ✔ accrues correctly after time warp
+    getHealthFactor
+      ✔ returns correct value before and after price change
+
+  ScoreEngine
+    updateScore - authorization
+      ✔ reverts NotOracle when called by non-oracle (44ms)
+    updateScore - validation
+      ✔ reverts InvalidScore when score is below 300 or above 850
+    updateScore - cooldown
+      ✔ reverts CooldownActive when called twice within 24h
+    updateScore - success
+      ✔ succeeds and emits ScoreUpdated with correct args
+    getScore
+      ✔ returns (350, 0) for a never-updated agent
+    getLTV
+      ✔ returns correct LTV for each score band
+    getScoreHistory
+      ✔ returns entries in correct order
+    addOracle / removeOracle
+      ✔ gates addOracle and removeOracle to owner only
+    circular buffer
+      ✔ overwrites oldest entry after 10 updates (91ms)
+
+
+  32 passing (3s)
+

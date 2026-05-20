@@ -1,0 +1,5 @@
+
+
+> @chainscore/indexer@0.0.1 build
+> tsc --outDir dist
+

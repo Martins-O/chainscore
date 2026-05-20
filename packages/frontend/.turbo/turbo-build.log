@@ -1,0 +1,72 @@
+
+
+> @chainscore/frontend@0.0.1 build
+> next build
+
+   ▲ Next.js 15.5.18
+
+   Creating an optimized production build ...
+ ⚠ Compiled with warnings in 9.6s
+
+../../node_modules/@metamask/sdk/dist/browser/es/metamask-sdk.js
+Module not found: Can't resolve '@react-native-async-storage/async-storage' in '/home/martins/hacks/arbitrum_hack/ChainScore/node_modules/@metamask/sdk/dist/browser/es'
+
+Import trace for requested module:
+../../node_modules/@metamask/sdk/dist/browser/es/metamask-sdk.js
+../../node_modules/@wagmi/connectors/dist/esm/metaMask.js
+../../node_modules/@wagmi/connectors/dist/esm/exports/index.js
+../../node_modules/wagmi/dist/esm/exports/connectors.js
+../../node_modules/@rainbow-me/rainbowkit/dist/index.js
+./app/page.tsx
+
+../../node_modules/pino/lib/tools.js
+Module not found: Can't resolve 'pino-pretty' in '/home/martins/hacks/arbitrum_hack/ChainScore/node_modules/pino/lib'
+
+Import trace for requested module:
+../../node_modules/pino/lib/tools.js
+../../node_modules/pino/pino.js
+../../node_modules/@walletconnect/logger/dist/index.es.js
+../../node_modules/@walletconnect/universal-provider/dist/index.es.js
+../../node_modules/@walletconnect/ethereum-provider/dist/index.es.js
+../../node_modules/@wagmi/connectors/dist/esm/walletConnect.js
+../../node_modules/@wagmi/connectors/dist/esm/exports/index.js
+../../node_modules/wagmi/dist/esm/exports/connectors.js
+../../node_modules/@rainbow-me/rainbowkit/dist/index.js
+./app/page.tsx
+
+ ⚠ Compiled with warnings in 5.9s
+
+../../node_modules/@metamask/sdk/dist/browser/es/metamask-sdk.js
+Module not found: Can't resolve '@react-native-async-storage/async-storage' in '/home/martins/hacks/arbitrum_hack/ChainScore/node_modules/@metamask/sdk/dist/browser/es'
+
+Import trace for requested module:
+../../node_modules/@metamask/sdk/dist/browser/es/metamask-sdk.js
+../../node_modules/@wagmi/connectors/dist/esm/metaMask.js
+../../node_modules/@wagmi/connectors/dist/esm/exports/index.js
+../../node_modules/wagmi/dist/esm/exports/connectors.js
+../../node_modules/@rainbow-me/rainbowkit/dist/index.js
+./app/page.tsx
+
+ ✓ Compiled successfully in 15.7s
+   Linting and checking validity of types     ✓ Linting and checking validity of types 
+   Collecting page data     ✓ Collecting page data 
+(node:527464) ExperimentalWarning: localStorage is not available because --localstorage-file was not provided.
+(Use `node --trace-warnings ...` to show where the warning was created)
+ ✓ Generating static pages (7/7)
+   Collecting build traces     ✓ Collecting build traces 
+   Finalizing page optimization     ✓ Finalizing page optimization 
+
+Route (app)                                 Size  First Load JS
+┌ ○ /                                     117 kB         439 kB
+├ ○ /_not-found                            997 B         106 kB
+├ ○ /admin                               4.38 kB         327 kB
+├ ○ /borrow                              6.08 kB         332 kB
+└ ○ /lend                                4.76 kB         330 kB
++ First Load JS shared by all             105 kB
+  ├ chunks/18-03f9ad6f3ded61b6.js        46.7 kB
+  ├ chunks/87c73c54-09e1ba5c70e60a51.js  54.2 kB
+  └ other shared chunks (total)          4.41 kB
+
+
+○  (Static)  prerendered as static content
+

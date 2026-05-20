@@ -1,0 +1,44 @@
+
+
+> @chainscore/oracle@0.0.1 test
+> vitest run
+
+[?25l
+ RUN  v3.2.4 /home/martins/hacks/arbitrum_hack/ChainScore/packages/oracle
+
+[?2026h
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 18:38:31
+   Duration 909ms
+[?2026l[?2026h[K[1A[K[1A[K[1A[K[1A[K[1A[K
+ ❯ test/ScoreComputer.test.ts [queued]
+
+ Test Files 0 passed (1)
+      Tests 0 passed (0)
+   Start at 18:38:31
+   Duration 1.12s
+[?2026l[?2026h[K[1A[K[1A[K[1A[K[1A[K[1A[K[1A[K[1A[K
+ ❯ test/ScoreComputer.test.ts 0/9
+
+ Test Files 0 passed (1)
+      Tests 0 passed (9)
+   Start at 18:38:31
+   Duration 1.39s
+[?2026l[K[1A[K[1A[K[1A[K[1A[K[1A[K[1A[K[1A[K ✓ test/ScoreComputer.test.ts (9 tests) 73ms
+   ✓ ScoreComputer > perfect wallet scores ~850 15ms
+   ✓ ScoreComputer > brand new wallet (<7 days) returns 350 with WALLET_TOO_NEW flag 4ms
+   ✓ ScoreComputer > one default on 5 loans penalizes repaymentScore 3ms
+   ✓ ScoreComputer > single token holder gets diversScore=20 2ms
+   ✓ ScoreComputer > three+ tokens held gets diversScore=100 1ms
+   ✓ ScoreComputer > wash trading (>60% linked) zeros stabilityScore and sets flag 1ms
+   ✓ ScoreComputer > high frequency (>50 txs/day for 3+ days) halves consistencyScore 4ms
+   ✓ ScoreComputer > dormant wallet (1 tx/month) gets low consistency score 2ms
+   ✓ ScoreComputer > score always clamped to [300, 850] for 100 random inputs 34ms
+
+ Test Files  1 passed (1)
+      Tests  9 passed (9)
+   Start at  18:38:31
+   Duration  1.59s (transform 248ms, setup 0ms, collect 228ms, tests 73ms, environment 0ms, prepare 343ms)
+
+[?25h
