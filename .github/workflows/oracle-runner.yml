@@ -1,27 +1,27 @@
-name: Oracle Runner
-on:
-  schedule:
-    - cron: '*/5 * * * *'   # every 5 min
-  workflow_dispatch:          # manual trigger for demo
+# name: Oracle Runner
+# on:
+#   schedule:
+#     - cron: '*/5 * * * *'   # every 5 min
+#   workflow_dispatch:          # manual trigger for demo
 
-jobs:
-  run-oracle:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          node-version: 20
-      - name: Install dependencies
-        run: cd packages/oracle && npm install
-      - name: Build
-        run: cd packages/oracle && npm run build
-      - name: Run oracle once
-        run: cd packages/oracle && node dist/OracleRunner.js --run-once
-        env:
-          ORACLE_PRIVATE_KEY: ${{ secrets.ORACLE_PRIVATE_KEY }}
-          RH_CHAIN_RPC_URL: ${{ secrets.RH_CHAIN_RPC_URL }}
-          SCORE_ENGINE_ADDRESS: ${{ secrets.SCORE_ENGINE_ADDRESS }}
-          AGENT_ID_ADDRESS: ${{ secrets.AGENT_ID_ADDRESS }}
-          LENDING_VAULT_ADDRESS: ${{ secrets.LENDING_VAULT_ADDRESS }}
-          INDEXER_API_URL: ${{ secrets.INDEXER_API_URL }}
+# jobs:
+#   run-oracle:
+#     runs-on: ubuntu-latest
+#     steps:
+#       - uses: actions/checkout@v4
+#       - uses: actions/setup-node@v4
+#         with:
+#           node-version: 20
+#       - name: Install dependencies
+#         run: cd packages/oracle && npm install
+#       - name: Build
+#         run: cd packages/oracle && npm run build
+#       - name: Run oracle once
+#         run: cd packages/oracle && node dist/OracleRunner.js --run-once
+#         env:
+#           ORACLE_PRIVATE_KEY: ${{ secrets.ORACLE_PRIVATE_KEY }}
+#           RH_CHAIN_RPC_URL: ${{ secrets.RH_CHAIN_RPC_URL }}
+#           SCORE_ENGINE_ADDRESS: ${{ secrets.SCORE_ENGINE_ADDRESS }}
+#           AGENT_ID_ADDRESS: ${{ secrets.AGENT_ID_ADDRESS }}
+#           LENDING_VAULT_ADDRESS: ${{ secrets.LENDING_VAULT_ADDRESS }}
+#           INDEXER_API_URL: ${{ secrets.INDEXER_API_URL }}
